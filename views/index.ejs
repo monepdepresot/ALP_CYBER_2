@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OAuth 2.0 Login</title>
+</head>
+<body>
+  <h1>Welcome to the OAuth 2.0 Login App</h1>
+
+  <% if (user) { %>
+    <h2>Hello, <%= user.displayName %></h2>
+    <img src="<%= user.photos[0].value %>" alt="Profile Picture">
+    <p>Email: <%= user.emails[0].value %></p>
+    <a href="/logout">Logout</a>
+  <% } else { %>
+    <a href="/auth/google"><button>Login with Google</button></a>
+  <% } %>
+</body>
+</html>
